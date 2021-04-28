@@ -1,0 +1,2 @@
+malaysia daily cases
+https://github.com/ynshung/covid-19-malaysia/blob/master/covid-19-malaysia.csv
