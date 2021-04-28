@@ -2,14 +2,16 @@ import streamlit as st
 import numpy as np
 import pandas as pd 
 import plotly.express as px
+from datetime import datetime
 
 st.set_page_config(layout="wide")
 st.image('aime.png', width=250)
 
 df = pd.read_excel("data.xlsx", sheet_name="Data Entry")
 df = df.loc[:, ~df.columns.str.contains('^Unnamed')]
-pop = pd.read_excel("data.xlsx", sheet_name="Pop")
-df.Date = pd.to_datetime(df.Date)
+pop = pd.read_excel("data.xlsx", sheet_name="Pop") 
+df.Date = pd.to_datetime(df.Date) 
+df.Date = df.Date.dt.date
 df = df[df['Date']< (pd.to_datetime("today") + pd.DateOffset(days=5))]
 
 states = ['Malaysia','Johor','Kedah','Kelantan','Melaka','NS','Pahang','Penang','Perak','Perlis','Sarawak','Sabah','Selangor','Terengganu','KL','Putrajaya','Labuan']
