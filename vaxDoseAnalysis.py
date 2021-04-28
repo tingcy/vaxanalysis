@@ -108,3 +108,6 @@ with col2:
         x=0.01))
     st.plotly_chart(fig2,use_container_width=True)
 
+st.write("The data used in this project is contributed by [Dr. Arvinder Singh HS](https://my.linkedin.com/in/drasinghr)")
+
+
