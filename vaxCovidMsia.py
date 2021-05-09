@@ -5,7 +5,7 @@ import plotly.express as px
 from datetime import datetime
 
 st.set_page_config(layout="wide")
-st.image('aime.png', width=250)
+st.image('aime.png', width=150)
 
 
 df = pd.read_excel("data_Arvinder.xlsx", sheet_name="Sheet1")
@@ -25,6 +25,7 @@ df_new['Malaysia per 1m New Cases'] = df_new.loc[:,'Malaysia Daily New Cases']/3
 df_new['Malaysia per 1m New Active Cases'] = df_new.loc[:,'Malaysia Daily New Active Cases']/32700000 * 1000000
 df_new['Malaysia per 1m New Death'] = df_new.loc[:,'Malaysia Daily New Death']/32700000 * 1000000
 df_new['Malaysia per 1m New Vaccinated'] = df_new.loc[:,'Malaysia daily new vaccinated']/32700000 * 1000000 
+df_new['Malaysia per 1m New Vaccinated'] = df_new['Malaysia per 1m New Vaccinated'].shift(periods=14)
 df_new['Malaysia per 1m New Cases 2020'] = df_new.loc[:,'Malaysia Daily New Cases 2020']/32700000 * 1000000 
 df_new['Malaysia per 1m New Death 2020'] = df_new.loc[:,'Malaysia Daily New Death 2020']/32700000 * 1000000
 
